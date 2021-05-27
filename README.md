@@ -46,7 +46,7 @@ php -S localhost:8000 -t public
 _It should now import all of the data_
 
 ## Available endpoints
-`localhost:8000` -  BASE ULR FOR endpoints
+`localhost:8000` -  BASE URL FOR endpoints
 
 `GET` `/customers`  - List of all customers
 
