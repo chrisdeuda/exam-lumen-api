@@ -19,11 +19,21 @@ class CustomerRepository implements EntityRepositoryInterface
      */
     private $repository;
 
+    /**
+     * CustomerRepository constructor.
+     *
+     * @param EntityManagerInterface $entityManager
+     */
     public function __construct(EntityManagerInterface $entityManager){
         $this->entityManager = $entityManager;
         $this->repository = $entityManager->getRepository(Customer::class);
     }
 
+    /**
+     * Return all customers
+     *
+     * @return array
+     */
     public function getAll(){
         foreach ($this->repository->findAll() as $customer) {
             $data[] = CustomerEntityFormmater::formatForAll($customer);
@@ -33,6 +43,8 @@ class CustomerRepository implements EntityRepositoryInterface
     }
 
     /**
+     * Search for specific customer
+     *
      * @param int $id
      * @return Object
      */

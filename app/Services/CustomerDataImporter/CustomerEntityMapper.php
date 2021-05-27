@@ -11,13 +11,6 @@ use App\Models\Customer;
  */
 class CustomerEntityMapper {
 
-    public function __construct(array $customer_data){
-
-    }
-
-    /**
-     * @param array $customer_data
-     */
 
     /**
      * @param array $customer
