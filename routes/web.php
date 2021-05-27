@@ -17,5 +17,5 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('import-user', 'UsersImportController@importUser');
-$router->get('customers', 'CustomerController@all');
+$router->get('/customers', 'CustomerController@all');
+$router->get('/customers/{customerId}', 'CustomerController@find');
