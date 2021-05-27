@@ -31,7 +31,6 @@ class CustomerEntityFormmater{
      */
     public  static function getDefaultFormat(Customer $Customer)  {
 
-
         $FormattedCustomer = new \stdClass();
 
         $FormattedCustomer->full_name = sprintf('%s %s', $Customer->getFirstName(), $Customer->getLastName());

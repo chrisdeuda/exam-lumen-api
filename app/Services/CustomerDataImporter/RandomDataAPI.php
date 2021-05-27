@@ -21,11 +21,18 @@ class RandomDataAPI{
     private const DEFAULT_QUERY_PARAMETERS = [
         'results' => 100,
         'nat' => 'au',
-        'inc' => 'name,login,location,email,gender,phone',
+        'inc' => 'name,login,location,email,gender,phone', // This are the essentisl fields needed from the api
     ];
 
 
-    public static function getData(){
+    /**
+     * Get the data from the third party API
+     *
+     * @return array|mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public static function getData()
+    {
 
         $client = new Client(['base_uri' => self::BASE_URL]);
 
