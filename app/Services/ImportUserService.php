@@ -4,7 +4,7 @@
 namespace App\Services;
 
 use Doctrine\ORM\EntityManagerInterface;
-use App\Entities\Customer;
+use App\Models\Customer;
 use App\Services\CustomerDataImporter\CustomerEntityMapper;
 
 
@@ -31,8 +31,13 @@ class ImportUserService
         $this->customerEntityRepository = $entityManager->getRepository(Customer::class);
 
     }
-    // Fetch data from the API
-    public function saveMultipleCustomerData(array $customers_data = []){
+
+    /**
+     * @param array $customers_data
+     *
+     * @return void
+     */
+    public function saveMultipleCustomerData(array $customers_data): void{
 
         if(count($customers_data)){
             foreach($customers_data as $customer) {
@@ -50,8 +55,6 @@ class ImportUserService
 
             $this->entityManager->flush();
         }
-
-        return count($customers_data);
     }
 
 }
