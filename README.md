@@ -8,7 +8,7 @@
 
 ## Installation
 
-1. Clone this project 
+1. Clone this project
 2. Run composer command
 ```
     composer install
@@ -25,7 +25,7 @@ DB_USERNAME=your-username
 DB_PASSWORD=your-password`
 ```   
 
-4. Run migrations for the default table `customers` 
+4. Run migrations for the default table `customers`
 ```
 php artisan migrate
 ```
@@ -37,7 +37,7 @@ php -S localhost:8000 -t public
 ```
 
 ## Running Customers import using terminal to import data from https://randomuser.me/api
-1. Make sure that your PHP and Mysql is running.
+1. Make sure that your PHP and Mysql are running.
 1. Open your Terminal or CMD
 2. To import customers data run:
 ```
@@ -46,7 +46,7 @@ php -S localhost:8000 -t public
 _It should now import all of the data_
 
 ## Available endpoints
-`localhost:8000` -  BASE ULR FOR endpoints 
+`localhost:8000` -  BASE ULR FOR endpoints
 
 `GET` `/customers`  - List of all customers
 
@@ -63,7 +63,7 @@ vendor/bin/phpunit
 
 ## Troubleshooting
 
-* If phpunit didn't work and give error relate to composer install. Try deleting the vendor folder and run composer install
+* If PHPUnit didn't work and give error relates to composer install. Try deleting the vendor folder and run composer install
 ```
  rm -rf vendor
  composer install
