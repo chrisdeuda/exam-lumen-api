@@ -3,7 +3,7 @@
 namespace App\Services\CustomerDataImporter;
 
 
-use App\Entities\Customer;
+use App\Models\Customer;
 
 /**
  * Class CustomerEntityMapper

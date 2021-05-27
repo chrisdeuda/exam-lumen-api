@@ -7,7 +7,7 @@ use GuzzleHttp\Client;
 class RandomDataAPI{
 
     /**
-     * API URL Fofr getting random data
+     * API URL for getting random data
      *
      * @var string
      */
