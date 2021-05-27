@@ -30,7 +30,7 @@ class CustomerEntityMapper {
         $Customer->setFirstName( $customer['name']['first']);
         $Customer->setLastName($customer['name']['last']);
         $Customer->setUsername($customer['login']['username']);
-        $Customer->setPassword(md5($customer['login']['password']));
+        $Customer->setPassword($customer['login']['password']);
         $Customer->setGender($customer['gender']);
         $Customer->setEmail($customer['email']);
         $Customer->setCountry($customer['location']['country']);
@@ -51,7 +51,7 @@ class CustomerEntityMapper {
         $Customer->setFirstName( $customer_data['name']['first']);
         $Customer->setLastName($customer_data['name']['last']);
         $Customer->setUsername($customer_data['login']['username']);
-        $Customer->setPassword(md5($customer_data['login']['password']));
+        $Customer->setPassword($customer_data['login']['password']);
         $Customer->setGender($customer_data['gender']);
         $Customer->setEmail($customer_data['email']);
         $Customer->setCountry($customer_data['location']['country']);
