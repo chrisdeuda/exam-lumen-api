@@ -7,8 +7,11 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Models\Customer;
 use App\Services\CustomerDataImporter\CustomerEntityMapper;
 
-
-class ImportUserService
+/**
+ * Class CustomerImportService
+ * @package App\Services
+ */
+class CustomerImportService
 {
     /**
      * @var EntityManagerInterface
@@ -21,7 +24,7 @@ class ImportUserService
     private $customerEntityRepository;
 
     /**
-     * ImportUserService constructor.
+     * CustomerImportService constructor.
      *
      * @param EntityManagerInterface $entityManager
      */

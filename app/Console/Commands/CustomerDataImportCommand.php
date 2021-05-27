@@ -2,7 +2,7 @@
 namespace App\Console\Commands;
 
 use App\Services\CustomerDataImporter\RandomDataAPI;
-use App\Services\ImportUserService;
+use App\Services\CustomerImportService;
 use Exception;
 use Illuminate\Console\Command;
 
@@ -38,13 +38,13 @@ class CustomerDataImportCommand extends Command
     }
 
     /**
-     * @param ImportUserService $ImportUserService
+     * @param CustomerImportService $CustomerImportService
      */
-    public function handle(ImportUserService $ImportUserService): void
+    public function handle(CustomerImportService $CustomerImportService): void
     {
         try{
             $response = RandomDataAPI::getData();
-            $ImportUserService->saveMultipleCustomerData($response);
+            $CustomerImportService->saveMultipleCustomerData($response);
             $this->info("Success");
         } catch(Exception $e){
             $this->error($e->getMessage());
