@@ -71,7 +71,9 @@ class ApiCustomerTest extends TestCase
         $this->assertEquals(200, $response->status());
     }
 
-
+    /**
+     * @return void
+     */
     public function testApiCustomerHasReturnJson(): void
     {
         $response = $this->call('GET', "/customers/" );

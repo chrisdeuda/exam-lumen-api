@@ -34,11 +34,12 @@ class CustomerRepository implements EntityRepositoryInterface
 
     /**
      * @param int $id
+     * @return Object
      */
-    public function find(int $id){
+    public function find(int $id): object
+    {
         $Customer  = $this->repository->find($id);
-        $result = CustomerEntityFormmater::getDefaultFormat($Customer);
-        return $result;
+        return CustomerEntityFormmater::getDefaultFormat($Customer);
     }
 
 }

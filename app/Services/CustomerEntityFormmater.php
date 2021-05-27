@@ -17,7 +17,8 @@ class CustomerEntityFormmater{
      *
      * @return array
      */
-    public static function formatForAll(Customer $customer):array{
+    public static function formatForAll(Customer $customer):array
+    {
         $customerData = [];
         $customerData['full_name'] = sprintf('%s %s', $customer->getFirstName(), $customer->getLastName());
         $customerData['email'] = $customer->getEmail();
@@ -28,8 +29,10 @@ class CustomerEntityFormmater{
 
     /**
      * @param Customer $Customer
+     * @return object
      */
-    public  static function getDefaultFormat(Customer $Customer)  {
+    public  static function getDefaultFormat(Customer $Customer): object
+    {
 
         $FormattedCustomer = new \stdClass();
 
