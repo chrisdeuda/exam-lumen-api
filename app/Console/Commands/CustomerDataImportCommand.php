@@ -38,11 +38,9 @@ class CustomerDataImportCommand extends Command
     }
 
     /**
-     * Execute the console command.
-     *
-     * @return mixed
+     * @param ImportUserService $ImportUserService
      */
-    public function handle(ImportUserService $ImportUserService)
+    public function handle(ImportUserService $ImportUserService): void
     {
         try{
             $response = RandomDataAPI::getData();
