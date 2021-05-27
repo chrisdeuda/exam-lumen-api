@@ -48,6 +48,9 @@ class CustomerEntityMapper {
      */
     public static function updateExistingCustomer(Customer $Customer, array $customer_data): Customer
     {
+        /**
+         * @TODO Refactor this to just use one code
+         */
         $Customer->setFirstName( $customer_data['name']['first']);
         $Customer->setLastName($customer_data['name']['last']);
         $Customer->setUsername($customer_data['login']['username']);
