@@ -2,7 +2,11 @@
 
 namespace App\Models;
 
-use Doctrine\ORM\Mapping AS ORM;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\GeneratedValue;
+
 
 /**
  * @ORM\Entity
@@ -11,64 +15,82 @@ use Doctrine\ORM\Mapping AS ORM;
 class Customer
 {
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @Id
+     * @GeneratedValue
+     * @Column(type="integer")
      */
-    protected $id;
+    private $id;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string")
      */
-    protected $first_name;
+    private $first_name;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string")
      */
-    protected $last_name;
+    private $last_name;
 
     /**
-     * @ORM\Column(type="string", length=70)
+     * @ORM\Column(type="string")
      */
-    protected $email;
+    private $username;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string")
      */
-    protected $username;
+    private $password;
 
     /**
-     * @ORM\Column(type="string", length=128)
+     * @ORM\Column(type="string")
      */
-    protected $password;
+    private $gender;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string")
      */
-    protected $country;
+    private $email;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string")
      */
-    protected $gender;
+    private $country;
 
     /**
-     * @ORM\Column(type="string", length=35)
+     * @ORM\Column(type="string")
      */
-    protected $city;
+    private $city;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string")
      */
-    protected $phone;
+    private $phone;
 
+    public function __construct()
+    {
+
+        /*$this->first_name = $customer['first_name'];
+        $this->last_name = $customer['last_name'];
+        $this->username = $customer['username'];
+        $this->password = $customer['password']; // Need to be Md5
+        $this->gender = $customer['gender'];
+        $this->email = $customer['email'];
+        $this->country = $customer['country'];
+        $this->city = $customer['city'];
+        $this->phone = $customer['phone'];*/
+
+    }
+
+    /**
+     * @return mixed
+     */
     public function getId()
     {
         return $this->id;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getFirstName()
     {
@@ -76,15 +98,15 @@ class Customer
     }
 
     /**
-     * @param string $firstName
+     * @param mixed $first_name
      */
-    public function setFirstName(string $firstName)
+    public function setFirstName($first_name): void
     {
-        $this->first_name = $firstName;
+        $this->first_name = $first_name;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getLastName()
     {
@@ -92,31 +114,15 @@ class Customer
     }
 
     /**
-     * @param string $lastName
+     * @param mixed $last_name
      */
-    public function setLastName(string $lastName)
+    public function setLastName($last_name): void
     {
-        $this->last_name = $lastName;
+        $this->last_name = $last_name;
     }
 
     /**
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param string $email
-     */
-    public function setEmail(string $email)
-    {
-        $this->email = $email;
-    }
-
-    /**
-     * @return string
+     * @return mixed
      */
     public function getUsername()
     {
@@ -124,47 +130,31 @@ class Customer
     }
 
     /**
-     * @param string $username
+     * @param mixed $username
      */
-    public function setUsername(string $username)
+    public function setUsername($username): void
     {
         $this->username = $username;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getPassword()
     {
-        return $this->username;
+        return $this->password;
     }
 
     /**
-     * @param string $password
+     * @param mixed $password
      */
-    public function setPassword(string $password)
+    public function setPassword($password): void
     {
         $this->password = $password;
     }
 
     /**
-     * @return string
-     */
-    public function getCountry()
-    {
-        return $this->country;
-    }
-
-    /**
-     * @param string $country
-     */
-    public function setCountry(string $country)
-    {
-        $this->country = $country;
-    }
-
-    /**
-     * @return string
+     * @return mixed
      */
     public function getGender()
     {
@@ -172,15 +162,47 @@ class Customer
     }
 
     /**
-     * @param string $gender
+     * @param mixed $gender
      */
-    public function setGender(string $gender)
+    public function setGender($gender): void
     {
         $this->gender = $gender;
     }
 
     /**
-     * @return string
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email): void
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param mixed $country
+     */
+    public function setCountry($country): void
+    {
+        $this->country = $country;
+    }
+
+    /**
+     * @return mixed
      */
     public function getCity()
     {
@@ -188,15 +210,15 @@ class Customer
     }
 
     /**
-     * @param string $city
+     * @param mixed $city
      */
-    public function setCity(string $city)
+    public function setCity($city): void
     {
         $this->city = $city;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getPhone()
     {
@@ -204,10 +226,16 @@ class Customer
     }
 
     /**
-     * @param string $phone
+     * @param mixed $phone
      */
-    public function setPhone(string $phone)
+    public function setPhone($phone): void
     {
         $this->phone = $phone;
     }
+
+
+
+
+
+    //
 }
